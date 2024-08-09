@@ -73,6 +73,30 @@ Assets = {
     Asset("IMAGE", "images/GearKnightIcon.tex"),
     Asset("ATLAS", "images/GearBishopIcon.xml"),
     Asset("IMAGE", "images/GearBishopIcon.tex"),
+    Asset("ATLAS", "images/DamagedBishopIcon.xml"),
+    Asset("IMAGE", "images/DamagedBishopIcon.tex"),
+    Asset("ATLAS", "images/DamagedKnightIcon.xml"),
+    Asset("IMAGE", "images/DamagedKnightIcon.tex"),
+    Asset("ATLAS", "images/DamagedRookIcon.xml"),
+    Asset("IMAGE", "images/DamagedRookIcon.tex"),
+    Asset("ATLAS", "images/DeerclopsIcon.xml"),
+    Asset("IMAGE", "images/DeerclopsIcon.tex"),
+    Asset("ATLAS", "images/GingerbreadVargIcon.xml"),
+    Asset("IMAGE", "images/GingerbreadVargIcon.tex"),
+    Asset("ATLAS", "images/HutchIcon.xml"),
+    Asset("IMAGE", "images/HutchIcon.tex"),
+    Asset("ATLAS", "images/SpiderQueenIcon.xml"),
+    Asset("IMAGE", "images/SpiderQueenIcon.tex"),
+    Asset("ATLAS", "images/MoslingIcon.xml"),
+    Asset("IMAGE", "images/MoslingIcon.tex"),
+    Asset("ATLAS", "images/DeerIcon.xml"),
+    Asset("IMAGE", "images/DeerIcon.tex"),
+    Asset("ATLAS", "images/VargIcon.xml"),
+    Asset("IMAGE", "images/VargIcon.tex"),
+    Asset("ATLAS", "images/VoltGoatIcon.xml"),
+    Asset("IMAGE", "images/VoltGoatIcon.tex"),
+    Asset("ATLAS", "images/VoltGoatHerdIcon.xml"),
+    Asset("IMAGE", "images/VoltGoatHerdIcon.tex"),
 }
 
 AddMinimapAtlas("images/SpiderIcon.xml")
@@ -110,6 +134,90 @@ AddMinimapAtlas("images/BeeQueenIcon.xml")
 AddMinimapAtlas("images/GearRookIcon.xml")
 AddMinimapAtlas("images/GearKnightIcon.xml")
 AddMinimapAtlas("images/GearBishopIcon.xml")
+AddMinimapAtlas("images/DamagedBishopIcon.xml")
+AddMinimapAtlas("images/DamagedKnightIcon.xml")
+AddMinimapAtlas("images/DamagedRookIcon.xml")
+AddMinimapAtlas("images/DeerclopsIcon.xml")
+AddMinimapAtlas("images/GingerbreadVargIcon.xml")
+AddMinimapAtlas("images/HutchIcon.xml")
+AddMinimapAtlas("images/SpiderQueenIcon.xml")
+AddMinimapAtlas("images/MoslingIcon.xml")
+AddMinimapAtlas("images/DeerIcon.xml")
+AddMinimapAtlas("images/VargIcon.xml")
+AddMinimapAtlas("images/VoltGoatIcon.xml")
+AddMinimapAtlas("images/VoltGoatHerdIcon.xml")
+
+AddPrefabPostInit("lightninggoatherd", function (inst)
+    if not inst:HasTag("VoltGoatHerdIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("VoltGoatHerdIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("lightninggoat", function (inst)
+    if not inst:HasTag("VoltGoatIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("VoltGoatIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("warg", function (inst)
+    if not inst:HasTag("VargIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("VargIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("deer", function (inst)
+    if not inst:HasTag("DeerIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("DeerIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("mossling", function (inst)
+    if not inst:HasTag("MoslingIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("MoslingIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("spiderqueen", function (inst)
+    if not inst:HasTag("SpiderQueenIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("SpiderQueenIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("hutch", function (inst)
+    if not inst:HasTag("HutchIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("HutchIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("gingerbreadwarg", function (inst)
+    if not inst:HasTag("GingerbreadVargIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("GingerbreadVargIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("deerclops", function (inst)
+    if not inst:HasTag("DeerclopsIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("DeerclopsIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("rook_nightmare", function (inst)
+    if not inst:HasTag("DamagedRookIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("DamagedRookIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("knight_nightmare", function (inst)
+    if not inst:HasTag("DamagedKnightIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("DamagedKnightIcon.tex")
+    end
+end)
+
+AddPrefabPostInit("bishop_nightmare", function (inst)
+    if not inst:HasTag("DamagedBishopIcon") then
+        inst.entity:AddMiniMapEntity():SetIcon("DamagedBishopIcon.tex")
+    end
+end)
 
 AddPrefabPostInit("rook", function (inst)
     if not inst:HasTag("GearRookIcon") then
@@ -184,7 +292,7 @@ AddPrefabPostInit("babybeefalo", function (inst)
 end)
 
 AddPrefabPostInit("beefalo", function (inst)
-    -- 抄自Where's My Beefalo?mod
+    -- 抄自[Where's My Beefalo]mod
     if not inst:HasTag("BeefaloIcon") then
         inst:AddComponent("BeefaloMapHandler")
         inst.components.BeefaloMapHandler.helper.entity:AddMiniMapEntity():SetIcon("BeefaloIcon.tex")
