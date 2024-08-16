@@ -16,7 +16,7 @@ end
 
 function BeefaloMapHandler:OnUpdate(dt)
     if (self.inst.components.inventoryitem and self.inst.components.inventoryitem:IsHeld()) then
-		self.helper.Transform:SetPosition(999999, 999999, 0)
+		self.helper.Transform:SetPosition(9, 9, 0)
 	else
 		local pos = self.inst:GetPosition()
 		local old_pos = self.old_pos
