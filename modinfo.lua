@@ -1,5 +1,5 @@
 name = "更多地图图标(more map icons)"
-version = '1.2'
+version = '1.3'
 description = [[
 为以下物品与生物添加了地图图标。
 ------
